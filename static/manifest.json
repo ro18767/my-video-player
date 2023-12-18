@@ -1,0 +1,20 @@
+{
+    "name": "My PWA",
+    "start_url": "/player",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/icon.256x256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        }
+    ],
+    "file_handlers": [
+        {
+          "action": "/player",
+          "accept": {
+            "video/mp4": [".mp4"]
+          }
+        }
+      ]
+}
