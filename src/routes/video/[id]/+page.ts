@@ -1,9 +1,8 @@
-import { base } from '$app/paths';
 import type { VideoItem } from '$lib/server/database';
 import type { PageLoad } from './$types';
 
 export const load = (async ({ fetch, params, url }) => {
-	let api_url = new URL('/core/v1/video', url);
+	let api_url = new URL('/api/v1/video', url);
 	api_url.searchParams.set('id', params.id);
 	let videoItem: VideoItem = await fetch(api_url).then((response) => response.json());
 	let { title } = videoItem;
@@ -14,9 +13,3 @@ export const load = (async ({ fetch, params, url }) => {
 		src
 	};
 }) satisfies PageLoad;
-
-export const ssr = false;
-
-export const csr = true;
-
-export const prerender = false;

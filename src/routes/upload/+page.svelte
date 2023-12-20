@@ -15,7 +15,7 @@
 			if (disabled) return;
 			let formData = new FormData(e.currentTarget);
 
-			let { id } = await fetch('/core/v1/video', {
+			let { id } = await fetch('/api/v1/video', {
 				body: formData,
 				method: 'POST'
 			}).then((respoce) => respoce.json());

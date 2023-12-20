@@ -1,4 +1,4 @@
-import adapter from 'svelte-adapter-azure-swa';
+import adapter from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -11,14 +11,11 @@ const config = {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
 		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
-		adapter: adapter({
-			customStaticWebAppConfig: {
-				platform: {
-					apiRuntime: 'node:18'
-				}
-			}
-		})
-	}
+		adapter: adapter(),
+		serviceWorker: {
+			register: false,
+		}
+	},
 };
 
 export default config;

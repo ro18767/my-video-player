@@ -17,6 +17,7 @@ export const GET: RequestHandler = async ({ request }) => {
 	try {
 		return json(await get_video(id));
 	} catch (err) {
+		console.log(err)
 		throw fail(500, { err: err });
 	}
 };
