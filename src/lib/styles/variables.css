@@ -1,0 +1,23 @@
+:root {
+	--font-body: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
+		helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+	--font-mono: 'Fira Mono', monospace;
+	font-family: var(--font-body);
+
+	--on-primary: 0 0 0;
+	--on-surface: 255 255 255;
+	/* // primary | #0FBA81  */
+	--primary: 15 186 129;
+	/* // surface | #495a8f */
+	--surface: 73 90 143;
+	--surface-50: 228 230 238;
+	--surface-100: 219 222 233;
+	--surface-200: 210 214 227;
+	--surface-300: 182 189 210;
+	--surface-400: 128 140 177;
+	--surface-500: 73 90 143;
+	--surface-600: 66 81 129;
+	--surface-700: 55 68 107;
+	--surface-800: 44 54 86;
+	--surface-900: 36 44 70;
+}

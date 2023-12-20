@@ -1,6 +1,7 @@
 {
 	"name": "my-video-player",
 	"version": "0.0.1",
+	"license": "MIT",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -15,10 +16,13 @@
 		"test:unit": "vitest"
 	},
 	"devDependencies": {
+		"@azure/cosmos": "^4.0.0",
+		"@fontsource/fira-mono": "^5.0.8",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/kit": "^1.20.4",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
+		"browser-fs-access": "^0.35.0",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
