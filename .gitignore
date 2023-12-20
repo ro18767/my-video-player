@@ -11,3 +11,4 @@ vite.config.ts.timestamp-*
 
 
 /static/video/*
+!/static/video/.gitkeep
