@@ -3,6 +3,9 @@
 	"version": "0.0.1",
 	"license": "MIT",
 	"private": true,
+	"engines": {
+		"npm": ">=18.0.0"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
