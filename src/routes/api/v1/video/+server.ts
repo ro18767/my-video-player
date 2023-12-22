@@ -56,12 +56,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			title: title || new Date().toJSON(),
 			video_filename_extention: video.type.split('/')[1] ?? ''
 		};
-		const filePath = path.join(
-			process.cwd(),
-			'static',
-			'video',
-			`${videoItem.id}.${videoItem.video_filename_extention}`
-		);
+		const filePath = `./video/${videoItem.id}.${videoItem.video_filename_extention}`;
 		await fs.writeFile(filePath, Buffer.from(await video.arrayBuffer()));
 
 		await create_video(videoItem);
