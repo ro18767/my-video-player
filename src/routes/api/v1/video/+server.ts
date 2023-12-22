@@ -49,6 +49,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			message: 'video  has incorect format'
 		});
 	try {
+		type VideoItem = any;
 		let videoItem: VideoItem = {
 			id: crypto.randomUUID(),
 			type: 'video',
