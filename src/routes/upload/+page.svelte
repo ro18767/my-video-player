@@ -19,7 +19,7 @@
 				body: formData,
 				method: 'POST'
 			}).then((respoce) => respoce.json());
-			goto(`/video/${id}`);
+			goto(`/watch/${id}`);
 		}}
 	>
 		<label for="title">Video title:</label>

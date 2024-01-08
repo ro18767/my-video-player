@@ -1,4 +1,5 @@
 <script lang="ts">
+	import arrow_back_icon from '$lib/assets/icons/Material/arrow_back.svg';
 	import Mediaplayer from '$lib/components/mediaplayer/Mediaplayer.svelte';
 	import {
 		fileOpen,
@@ -54,11 +55,12 @@
 	});
 </script>
 
-<div class="grid">
+<div class="page">
 	{#if src}
 		<Mediaplayer {src} paused={true} />
 	{:else if supported}
 		<button
+			class="fileselector"
 			on:dragenter|stopPropagation|preventDefault
 			on:dragover|stopPropagation|preventDefault
 			on:drop|preventDefault|stopPropagation={handle_drop}
@@ -67,12 +69,47 @@
 	{:else}
 		<div>Your browser does not support core features</div>
 	{/if}
+	<div class="topbar">
+		<a class="back_btn" href="/">
+			<img src={arrow_back_icon} alt="back" />
+		</a>
+	</div>
 </div>
 
 <style>
-	.grid {
+	.page {
 		display: grid;
+		position: relative;
 		height: 100vh;
 		height: 100dvh;
+
+		background-color: rgb(0 0 0);
+		color: rgb(var(--on-surface));
+	}
+	.topbar {
+		display: flex;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		box-shadow: 0 0 16px 16px rgb(var(--surface-900) / 30%);
+		background-color: rgb(var(--surface-900) / 30%);
+	}
+	.back_btn {
+		appearance: none;
+		background-color: transparent;
+		color: rgb(var(--on-surface));
+		background-image: none;
+		height: 48px;
+		width: 64px;
+		display: grid;
+		place-items: center;
+	}
+	.back_btn img {
+		filter: invert(100%);
+	}
+	.fileselector {
+		background-color: rgb(0 0 0);
+		color: rgb(var(--on-surface));
 	}
 </style>
