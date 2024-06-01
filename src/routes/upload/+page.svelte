@@ -2,13 +2,14 @@
 	import upload_file_icon from '$lib/assets/icons/Material/upload_file.svg';
 	import { goto } from '$app/navigation';
 	import FileDropzone from '$lib/components/mediaplayer/FileDropzone.svelte';
+	import { onMount } from 'svelte';
 
 	let video_files: FileList;
 	$: video = video_files?.[0];
 	// $: console.log(video_files);
 	let title = '';
 	$: disabled = !(title.length && video);
-	let load_promise: Promise<{ id: string }>;
+	let load_promise: Promise<unknown>;
 </script>
 
 <div class="page">
@@ -22,9 +23,9 @@
 				load_promise = fetch('/api/v1/video', {
 					body: formData,
 					method: 'POST'
-				}).then((respoce) => respoce.json());
-				let { id } = await load_promise;
-				goto(`/watch/${id}`);
+				})
+					.then((respoce) => respoce.json())
+					.then(({ id } = {}) => goto(`/watch/${id}`));
 			}}
 		>
 			<label class="label">
@@ -35,6 +36,14 @@
 			<FileDropzone name="video" bind:files={video_files} accept="video/*" multiple={false}>
 				<svelte:fragment slot="lead">
 					<img class="upload_file_icon" src={upload_file_icon} alt="upload file" />
+				</svelte:fragment>
+
+				<svelte:fragment slot="message">
+					{#if video?.name?.length}
+						Selected File: <strong>{video.name}</strong>
+					{:else}
+						<strong>Upload a file</strong> or drag and drop
+					{/if}
 				</svelte:fragment>
 				<svelte:fragment slot="meta">max file size 50 MB</svelte:fragment>
 			</FileDropzone>
