@@ -1,6 +1,6 @@
 import { error, fail, json } from '@sveltejs/kit';
 import path from 'path';
-import * as api_path from './path';
+import * as api_path from '$lib/server/path';
 import fs from 'fs/promises';
 import type { RequestHandler } from './$types';
 import { create_video, get_video, type VideoItem } from '$lib/server/database';
