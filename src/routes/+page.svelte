@@ -39,7 +39,7 @@
 </script>
 
 <svelte:head>
-	<title>Welcome to Voble - Video Player/Hosting</title>
+	<title>Welcome to Vobla - Video Player/Hosting</title>
 </svelte:head>
 
 <div class="welcome-container">
