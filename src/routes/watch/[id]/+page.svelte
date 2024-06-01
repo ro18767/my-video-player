@@ -39,8 +39,8 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		box-shadow: 0 0 16px 16px rgb(var(--surface-900) / 30%);
-		background-color: rgb(var(--surface-900) / 30%);
+		box-shadow: 0 0 16px 16px rgb(var(--color-surface-900) / 80%);
+		background-color: rgb(var(--color-surface-900) / 80%);
 	}
 	.back_btn {
 		appearance: none;

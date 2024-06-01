@@ -47,8 +47,8 @@
 	.timeline > .progress {
 		background-image: linear-gradient(
 			to right,
-			rgb(var(--primary)) 0 calc(var(--value) * 100%),
-			rgb(var(--surface)) calc(var(--value) * 100%) 100%
+			rgb(var(--color-primary-500)) 0 calc(var(--value) * 100%),
+			rgb(var(--color-surface-500)) calc(var(--value) * 100%) 100%
 		);
 		display: block;
 		position: relative;
@@ -65,9 +65,9 @@
 
 		aspect-ratio: 1 / 1;
 		border-width: 1px;
-		border-color: rgb(var(--surface-900));
+		border-color: rgb(var(--color-surface-900));
 		border-style: solid;
 		border-radius: 50%;
-		background-color: rgb(var(--primary));
+		background-color: rgb(var(--color-primary-500));
 	}
 </style>

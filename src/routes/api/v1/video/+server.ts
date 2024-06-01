@@ -28,15 +28,9 @@ export const POST: RequestHandler = async ({ request }) => {
 	let { video, title } = Object.fromEntries(await request.formData());
 	if (title == null) {
 		title = new Date().toJSON();
-		// throw error(400, {
-		// 	message: 'not found title'
-		// });
 	}
 	if (typeof title !== 'string') {
 		title = new Date().toJSON();
-		// throw error(400, {
-		// 	message: 'video is file but must be string'
-		// });
 	}
 	if (video == null)
 		throw error(400, {
@@ -55,7 +49,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		let videoItem: VideoItem = {
 			id: crypto.randomUUID(),
 			type: 'video',
-			title: title || new Date().toJSON(),
+			title: title.trim() || new Date().toJSON(),
 			video_filename_extention: video.type.split('/')[1] ?? ''
 		};
 		const filePath = path.join(
